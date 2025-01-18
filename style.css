@@ -1,0 +1,217 @@
+*, 
+*::before, 
+*::after{
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    background-image: url(youtube_fFvnGVZ6LWk_1920x1012_h264.mp4);
+}
+
+.blur{
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(100px);
+}
+
+.video-wrapper{
+    background-color: black;
+}
+
+#background-video{
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.generator{
+    box-shadow: 10px 10px 10px;
+    margin: 100px auto 20px;
+    width: 100%;
+    max-width: 540px;
+    background: linear-gradient(150deg, white, rgb(167, 167, 167));
+    padding: 40px 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    animation: bounce 1s 0.3s ease, reveal 3s ease;
+    overflow: hidden;
+}
+
+@keyframes reveal{
+    from{
+        max-height: 0;
+    }
+    to{
+        max-height: 1000px
+    }
+}
+
+@keyframes bounce {
+    0%{
+        transform: translateY(-200px);
+    }
+    15%{
+        transform: translateY(-200px);
+    }
+    30%{
+        transform: translateY(0px);
+    }
+    45%{
+        transform: translateY(25px);
+    }
+    60% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(15px);
+    }
+    90% {
+        transform: translateY(0px);
+    }
+    95% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.row button {
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    width: 100%;
+    height: 3rem;
+    border-radius: 40px;
+    /* background-color: transparent; */
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 3px;
+}
+
+.row button span{
+    background-color: rgb(5, 6, 45);
+    padding: 12px 24px;
+    border-radius: 40px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+    color: white;
+}
+
+.row input{
+    margin: 15px auto;
+    width: 100%;
+    padding: 20px;
+    align-self: center;
+    border-radius: 15px;
+    cursor: default;
+}
+
+.row button span:hover{
+    background-color: transparent;
+}
+
+.generator h2{
+    text-align: center;
+}
+
+#karakter {
+    margin: 20px auto;
+    width: 100%;
+    padding: 10px;
+    align-self: center;
+    border-radius: 15px;
+    cursor: text;
+}
+
+:required{
+    border: 2px solid red;
+}
+
+
+button:disabled{
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Gaya untuk modal */
+.modal {
+    display: none;
+    position: fixed; /* Tetap di tempat saat di-scroll */
+    z-index: 1; /* Pastikan modal berada di atas elemen lain */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Aktifkan scroll jika konten modal terlalu besar */
+    background-color: rgba(0,0,0,0.4); /* Transparansi latar belakang */
+}
+
+/* Gaya untuk konten modal */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: 20% auto; /* 15% dari atas dan tengah */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    width: 30%; /* Lebar modal */
+}
+
+.modal-content span{
+    text-align: center;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* Gaya untuk tombol close */
+.close {
+    margin: 10px auto;
+    width: 50%;
+    opacity: 50%;
+    float: right;
+    font-size: 18px;
+    /* font-weight: bold; */
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    transition: all 0.3s ease-in;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    background: linear-gradient(135deg, rgb(241, 46, 46), rgb(255, 0, 0));
+    text-decoration: none;
+    cursor: pointer;
+}

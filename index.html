@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="blur">
+
+        </div>
+        <div class="video-wrapper">
+            <video autoplay muted loop id="background-video">
+                <source src="background.mp4" type="video/mp4"> Your browser does not support the video tag. 
+            </video>
+        </div>
+        <div class="generator">
+            <h2>PASSWORD GENERATOR</h2>
+            <div class="row">
+                <input id="karakter" type="number" placeholder="Masukkan Banyak Karakter yang Diinginkan" required>
+                <input type="text" placeholder="PASSWORD Akan Muncul Disini" id="input-el" readonly>
+                <button id="btn-generate" disabled><span>GENERATE</span></button>
+            </div>
+            <div id="modal-el" class="modal">
+                <div class="modal-content">
+                    <span>KARAKTER HARUS KURANG DARI 20</span>
+                    <button id="btn-class" class="close"><span>Close</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
